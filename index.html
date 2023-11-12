@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div id="board" x-data="theBoard" x-init="theBoard.update()">
+<div id="board" x-data="theBoard()" x-init="update()">
     <form>
         <label for="fen">FEN: </label>
         <textarea id="fen" cols="80" name="FEN" x-model="fenContent"></textarea>
@@ -46,7 +46,7 @@
                 <template x-for="sRow in headRow">
                     <td :class="'row-'+sRow+' col-'+sCol+getColor(sRow+sCol)"> <!--x-text="sRow+sCol"-->
                         <template x-if="getPiece(sRow+sCol)">
-                            <div :class="'piece '+pieceClasses[getPiece(sRow+sCol)]">&nbsp;</div>
+                            <div :class="'piece '+pieceClasses[getPiece(sRow+sCol)]"></div>
                         </template>
                     </td>
                 </template>

@@ -1,0 +1,64 @@
+.board {
+  text-align: center;
+}
+
+.board tbody td {
+  border: 1px aquamarine solid;
+  width: 3em;
+  height: 3em;
+}
+
+.board tbody td.white {
+  background-color: beige;
+}
+
+.board tbody td.black {
+  background-color: burlywood;
+}
+
+.board tbody .piece {
+  width: 100%;
+  height: 100%;
+}
+
+.board tbody .piece {
+  background-image: url("images/pieces.png");
+  background-size: 550%;
+}
+
+.board tbody .piece.pawnWhite {
+  background-position: -750px -200px;
+}
+.board tbody .piece.pawnBlack {
+  background-position: -750px -146px;
+}
+.board tbody .piece.rookWhite {
+  background-position: -706px -200px;
+}
+.board tbody .piece.rookBlack {
+  background-position: -706px -146px;
+}
+.board tbody .piece.knightWhite {
+  background-position: -662px -200px;
+}
+.board tbody .piece.knightBlack {
+  background-position: -662px -146px;
+}
+.board tbody .piece.bishopWhite {
+  background-position: -616px -200px;
+}
+.board tbody .piece.bishopBlack {
+  background-position: -616px -146px;
+}
+.board tbody .piece.queenWhite {
+  background-position: -574px -200px;
+}
+.board tbody .piece.queenBlack {
+  background-position: -574px -146px;
+}
+.board tbody .piece.kingWhite {
+  background-position: -530px -200px;
+}
+.board tbody .piece.kingBlack {
+  background-position: -530px -146px;
+}

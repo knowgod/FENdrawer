@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FEN drawer</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="board.js"></script>
+    <link rel="stylesheet" href="assets/board.css">
+</head>
+<body>
+
+<div id="board" x-data="theBoard" x-init="theBoard.update()">
+    <form>
+        <label for="fen">FEN: </label>
+        <textarea id="fen" cols="80" name="FEN" x-model="fenContent"></textarea>
+        <button type="button" @click="update()">Update</button>
+    </form>
+
+    <div class="board-info">
+        <ul>
+            <li>
+                <span x-text="getToMove()"></span> to move
+            </li>
+            <li>
+                White can castle: <span x-text="getToCastle('w')"></span>
+            </li>
+            <li>
+                Black can castle: <span x-text="getToCastle('b')"></span>
+            </li>
+            <li>
+                En Passant: <span x-text="fenConditions.enPassant"></span>
+            </li>
+        </ul>
+    </div>
+    <table class="board">
+        <thead>
+        <td></td>
+        <template x-for="sRow in headRow">
+            <th x-text="sRow"></th>
+        </template>
+        </thead>
+        <tbody>
+        <template x-for="sCol in headCol">
+            <tr>
+                <th x-text="sCol"></th>
+                <template x-for="sRow in headRow">
+                    <td :class="'row-'+sRow+' col-'+sCol+getColor(sRow+sCol)"> <!--x-text="sRow+sCol"-->
+                        <template x-if="getPiece(sRow+sCol)">
+                            <div :class="'piece '+pieceClasses[getPiece(sRow+sCol)]">&nbsp;</div>
+                        </template>
+                    </td>
+                </template>
+            </tr>
+        </template>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

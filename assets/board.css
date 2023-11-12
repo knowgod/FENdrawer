@@ -51,14 +51,14 @@
   background-position: -616px -146px;
 }
 .board tbody .piece.queenWhite {
-  background-position: -574px -200px;
+  background-position: -572px -200px;
 }
 .board tbody .piece.queenBlack {
-  background-position: -574px -146px;
+  background-position: -572px -146px;
 }
 .board tbody .piece.kingWhite {
-  background-position: -530px -200px;
+  background-position: -526px -200px;
 }
 .board tbody .piece.kingBlack {
-  background-position: -530px -146px;
+  background-position: -526px -146px;
 }
